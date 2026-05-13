@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-13T19:35:00Z",
+  "title": "Design System: Notes & Tasks",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Creator's Cobalt", "canonical": "oklch(0.5 0.15 220)" },
+      "neutral-surface": { "role": "neutral", "displayName": "Studio White", "canonical": "oklch(1 0.005 220)" }
+    },
+    "typographyMeta": {},
+    "shadows": [
+      { "name": "Action Lift", "value": "0 8px 30px rgba(0, 0, 0, 0.05)", "purpose": "Appears under a task card when it expands to reveal the whiteboard." }
+    ],
+    "motion": [
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for state transitions." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Tactile and playful primary action.",
+      "html": "<button class=\"ds-btn-primary\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg> Add Task</button>",
+      "css": ".ds-btn-primary { background: oklch(0.5 0.15 220); color: #fff; padding: 0 24px; height: 48px; border-radius: 16px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); font-family: inherit; } .ds-btn-primary:hover { background: oklch(0.45 0.15 220); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Task Input",
+      "kind": "input",
+      "refersTo": "input-task",
+      "description": "Ready to be cleaned and armed.",
+      "html": "<input type=\"text\" class=\"ds-input\" placeholder=\"What needs to be done?\" />",
+      "css": ".ds-input { background-color: oklch(1 0.005 220); border: 1px solid oklch(0.9 0.01 220); border-radius: 16px; padding: 16px 20px; font-size: 1.1rem; width: 100%; transition: border-color 0.3s, box-shadow 0.3s; font-family: inherit; color: oklch(0.2 0.01 220); outline: none; } .ds-input:focus { border-color: oklch(0.5 0.15 220); box-shadow: 0 0 0 3px color-mix(in oklch, oklch(0.5 0.15 220) 20%, transparent); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Endless Colorful Canvas",
+    "overview": "This system is built for visual thinkers and pioneers. It pairs the rigid organization of a checklist with the boundless freedom of an infinite whiteboard. The aesthetic is tactile, helpful, and creative—feeling like an inspiring workspace rather than a rigid management tool. It explicitly rejects generic corporate patterns and sterile SaaS interfaces.",
+    "keyCharacteristics": [
+      "Structure meets freedom.",
+      "Creator-first and visually fluid.",
+      "Ready to be cleaned and armed for what comes next."
+    ],
+    "rules": [
+      { "name": "The Personalization Rule", "body": "The system must support deep personalization, allowing the user to override \"Creator's Cobalt\" with their own theme color via a color wheel, while maintaining contrast.", "section": "colors" },
+      { "name": "The Content-First Rule", "body": "Typography should never compete with the user's whiteboard creations. Keep font weights deliberate and line-lengths comfortable (65-75ch).", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "Surfaces are flat at rest. Shadows appear only as a response to state (hover, elevation, focus).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do ensure that the whiteboard canvas has plenty of breathing room to support open-endedness.",
+      "Do make interactions feel tactile and responsive (e.g., slight translateY on hover).",
+      "Do maintain sufficient contrast and legibility across all custom color choices."
+    ],
+    "donts": [
+      "Don't make the interface look like a generic corporate business website or sterile B2B SaaS tool.",
+      "Don't use overly formal, rigid, or highly-constrained layouts.",
+      "Don't animate CSS layout properties like width or height directly without care, prefer transforms or opacity."
+    ]
+  }
+}
